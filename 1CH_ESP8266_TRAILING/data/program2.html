@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <style>
+    .slider {
+      width: 300px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+</head>
+<body>
+	<div class="container" style="margin-top:50px;">
+		<h1 style="margin-bottom:30px; text-align:center;">2 CHANNEL DIMMER</h1>
+
+		<div class="row">
+			<div class="col-lg-6 text-center">
+				<p>1CH OUTPUT POWER : <span id="servoPos1">0 </span></p>
+				<div class="panel-body">
+					<input type="range" min="0" max="255" class="custom-range slider" id="servoSlider1" onchange="servo(this.value,1)" value="0"/>
+				</div>
+			</div>
+			<div class="col-lg-6 text-center">
+				<p>2CH OUTPUT POWER : <span id="servoPos2">0</span></p>
+				<div class="panel-body">
+					<input type="range" min="0" max="255" class="custom-range slider" id="servoSlider2" onchange="servo(this.value,2)" value="0"/>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+  
+  
+  
+  <script>	
+	$('#servoSlider1').on("change mousemove", function() {
+		$("#servoPos1").html($(this).val());
+	});	
+	$('#servoSlider2').on("change mousemove", function() {
+		$("#servoPos2").html($(this).val());
+	});
+	
+    $.ajaxSetup({timeout:1000});
+	
+    function servo(pos, counter) {
+      $.get("/program2/?slider" + counter + "=" + pos);
+      {Connection: close};
+    }
+  </script>
+</body>
+</html>
