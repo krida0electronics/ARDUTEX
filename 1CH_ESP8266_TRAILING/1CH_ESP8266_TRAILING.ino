@@ -9,6 +9,9 @@
  *  WIFI MODULE - NODEMCU, WEMOS, ESP8266
  *  
  *  DEVELOPED BY KRIDA ELECTRONICS - krida.electronics@gmail.com
+ * 
+ *  Available here - https://www.tindie.com/stores/bugrovs2012/
+ *
  */
 
 #include <ESP8266WiFi.h>
