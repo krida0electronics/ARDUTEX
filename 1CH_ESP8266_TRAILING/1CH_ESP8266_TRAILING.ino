@@ -29,8 +29,8 @@ unsigned char work;
 AsyncWebServer server(80);
 
 // Replace with your network credentials
-const char* ssid = "STYLUS_ID";
-const char* password = "marlboro1986";
+const char* ssid = "XXXXXXXXXXXX";   
+const char* password = "XXXXXXXXXXX";
 
 
 
