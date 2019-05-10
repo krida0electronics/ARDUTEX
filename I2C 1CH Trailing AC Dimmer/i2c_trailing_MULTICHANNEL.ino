@@ -1,3 +1,11 @@
+//
+// How does this code work - https://www.youtube.com/watch?v=I69j5N3oj2s
+//
+// ARDUTEX Trailing Edge AC LED Light Dimmer - https://www.tindie.com/stores/bugrovs2012/
+//
+// More details - krida.electronics@gmail.com
+//
+
 #include <Wire.h> 
 
 #define DEVICE_01 0x10   // slave address of #1 device
