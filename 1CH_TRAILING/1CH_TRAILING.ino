@@ -7,6 +7,8 @@
 //
 // More information - krida.electronics@gmail.com
 //
+// Please note wiring with arduino uno: zerocross on D2, gate on D3
+//
 
 
 #include <TimerOne.h>
