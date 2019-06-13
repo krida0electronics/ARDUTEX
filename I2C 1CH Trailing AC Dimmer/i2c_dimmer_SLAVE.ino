@@ -66,6 +66,8 @@ void loop() {
    
     Serial.print("<> Slave received - ");
     Serial.println(inByte);
+    
+    if (inByte>250) {inByte=250;}          // if LED bulb flick at full power, change this value to lower
 
     timer=(inByte*FREQ)/255;
 
