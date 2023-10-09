@@ -9,6 +9,7 @@
 //
 // Please note wiring with arduino uno: zerocross on D2, gate on D3
 //
+// 
 
 
 #include <TimerOne.h>
@@ -28,27 +29,26 @@ void setup() {
 
 
 void Zero_Cross_interrupt() {
-   
+
+  delayMicroseconds(100); 
   digitalWrite(GATE, HIGH);
-  timer=(inByte*FREQ)/255;
+  timer = (inByte*FREQ)/255;
   Timer1.initialize(timer);    
 }
 
 void timerIsr() {
-  
-  Timer1.stop();   
+
   digitalWrite(GATE, LOW);
+  Timer1.stop();   
+  
 }
 
 void loop() {
 
+  for (i=0; i<250; i++) {inByte++; delay(100);}   // rising function
 
-  for (i=0; i<255; i++){
+  for (i=250; i>0; i--) {inByte--; delay(100);}   // falling function
 
-    inByte++;
-    delay(10);
-  }
-
-
+  inByte =0;
   
 }
